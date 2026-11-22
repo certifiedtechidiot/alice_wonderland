@@ -1,0 +1,5 @@
+# Script lines for character: MAD_HATTER
+# Total lines: 2
+
+Cue 10 | S3 | [excitedly] No room! No room! [playfully] Welcome to our tea party!
+Cue 14 | S3 | [laughs] Because in Wonderland, nothing makes sense!

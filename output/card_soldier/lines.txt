@@ -1,0 +1,6 @@
+# Script lines for character: CARD_SOLDIER
+# Total lines: 3
+
+Cue 23 | S4 | [stiffly] Yes, Your Majesty! Nobody questions the Queen of Hearts!
+Cue 25 | S4 | [matter-of-factly] Well, I'm a soldier, not a thinker!
+Cue 27 | S4 | [stiffly] Yes, Your Majesty!

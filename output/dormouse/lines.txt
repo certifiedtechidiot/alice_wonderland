@@ -1,0 +1,7 @@
+# Script lines for character: DORMOUSE
+# Total lines: 4
+
+Cue 09 | S3 | [sings] Twinkle twinkle little bat...
+Cue 15 | S3 | [yawning] Please stop! [whispers] I'm trying to sleep!
+Cue 17 | S3 | [sleepily] Only when someone mentions cake!
+Cue 19 | S3 | [excitedly] Oh! Then I'm wide awake!

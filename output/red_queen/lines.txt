@@ -1,0 +1,6 @@
+# Script lines for character: RED_QUEEN
+# Total lines: 3
+
+Cue 20 | S4 | [furiously] Who dares enter my garden? [shouting] Off with their heads!
+Cue 22 | S4 | [furiously] How dare you question the Queen of Hearts!
+Cue 26 | S4 | [shouting] Enough talking! Seize her immediately!

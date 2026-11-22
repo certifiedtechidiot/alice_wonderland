@@ -1,0 +1,12 @@
+# Script lines for character: ALICE
+# Total lines: 9
+
+Cue 02 | S1 | [amazed] A rabbit wearing a waistcoat and carrying a watch? How curious! [excitedly] Oh wait! Mr Rabbit! Where are you going! What's the hurry?
+Cue 05 | S2 | I'm looking for my way home.
+Cue 07 | S2 | Everybody seems so strange here!
+Cue 11 | S3 | But there's plenty of room!
+Cue 13 | S3 | Why is this tea party so strange?
+Cue 16 | S3 | Don't you ever wake up?
+Cue 21 | S4 | Why are you so angry?
+Cue 24 | S4 | Do you always follow orders without thinking?
+Cue 28 | S4 | [firmly] I'm not afraid of you! You're nothing but a pack of cards!

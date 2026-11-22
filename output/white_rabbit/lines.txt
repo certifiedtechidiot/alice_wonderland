@@ -1,0 +1,5 @@
+# Script lines for character: WHITE_RABBIT
+# Total lines: 2
+
+Cue 01 | S1 | [panicked] Oh, dear! Oh, dear! I shall be too late!
+Cue 03 | S1 | [rushed] The Queen will be furious if I don't reach the palace!

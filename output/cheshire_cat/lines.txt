@@ -1,0 +1,6 @@
+# Script lines for character: CHESHIRE_CAT
+# Total lines: 3
+
+Cue 04 | S2 | [mischievously] Welcome to Wonderland, little girl! Looking for someone?
+Cue 06 | S2 | [chuckles] That depends on where you want to go! [mischievously] We're all mad here!
+Cue 08 | S2 | [playfully] Follow the music to the tea party!

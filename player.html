@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alice in Wonderland — Voiceover Studio & Audio Player</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --card-border: #30363d;
+      --text: #e6edf3;
+      --text-muted: #8b949e;
+      --accent: #58a6ff;
+      --tag-bg: rgba(88, 166, 255, 0.15);
+      --tag-border: rgba(88, 166, 255, 0.3);
+      --alice-color: #58a6ff;
+      --rabbit-color: #f0883e;
+      --cat-color: #d29922;
+      --hatter-color: #bc8cff;
+      --hare-color: #7ee787;
+      --dormouse-color: #f778ba;
+      --queen-color: #ff7b72;
+      --soldier-color: #79c0ff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 24px;
+    }
+    .container { max-width: 1000px; margin: 0 auto; }
+    header {
+      padding-bottom: 20px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--card-border);
+    }
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+    .stats-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .stat-badge {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 6px;
+      padding: 6px 12px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .stat-badge strong { color: var(--text); }
+
+    .controls-panel {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+    .label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      min-width: 80px;
+    }
+    .filter-btn {
+      background: #21262d;
+      color: var(--text);
+      border: 1px solid var(--card-border);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .filter-btn:hover { background: #30363d; }
+    .filter-btn.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+      font-weight: 600;
+    }
+    .play-all-btn {
+      background: #238636;
+      color: #fff;
+      border: 1px solid rgba(240,246,252,0.1);
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .play-all-btn:hover { background: #2ea043; }
+    .stop-btn {
+      background: #da3633;
+      color: #fff;
+      border: 1px solid rgba(240,246,252,0.1);
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .stop-btn:hover { background: #f85149; }
+
+    .cues-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .cue-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 16px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 16px;
+      align-items: center;
+      transition: border-color 0.15s ease;
+    }
+    .cue-card:hover { border-color: #58a6ff; }
+    .cue-card.playing {
+      border-color: #2ea043;
+      background: rgba(35, 134, 54, 0.08);
+    }
+    .cue-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      min-width: 50px;
+    }
+    .cue-number {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .scene-pill {
+      font-size: 11px;
+      font-weight: 600;
+      background: #21262d;
+      color: var(--text-muted);
+      border-radius: 4px;
+      padding: 2px 6px;
+    }
+    .cue-content {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .character-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+    }
+    .character-badge {
+      font-weight: 600;
+      text-transform: capitalize;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+    .char-alice { background: rgba(88, 166, 255, 0.15); color: var(--alice-color); border: 1px solid rgba(88, 166, 255, 0.3); }
+    .char-white_rabbit { background: rgba(240, 136, 62, 0.15); color: var(--rabbit-color); border: 1px solid rgba(240, 136, 62, 0.3); }
+    .char-cheshire_cat { background: rgba(210, 153, 34, 0.15); color: var(--cat-color); border: 1px solid rgba(210, 153, 34, 0.3); }
+    .char-mad_hatter { background: rgba(188, 140, 255, 0.15); color: var(--hatter-color); border: 1px solid rgba(188, 140, 255, 0.3); }
+    .char-march_hare { background: rgba(126, 231, 135, 0.15); color: var(--hare-color); border: 1px solid rgba(126, 231, 135, 0.3); }
+    .char-dormouse { background: rgba(247, 120, 186, 0.15); color: var(--dormouse-color); border: 1px solid rgba(247, 120, 186, 0.3); }
+    .char-red_queen { background: rgba(255, 123, 114, 0.15); color: var(--queen-color); border: 1px solid rgba(255, 123, 114, 0.3); }
+    .char-card_soldier { background: rgba(121, 192, 255, 0.15); color: var(--soldier-color); border: 1px solid rgba(121, 192, 255, 0.3); }
+
+    .voice-tag {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .cue-text {
+      font-size: 15px;
+      color: #e6edf3;
+    }
+    .emotion-tag {
+      color: #d2a8ff;
+      font-style: italic;
+      font-weight: 500;
+      margin-right: 2px;
+    }
+    .cue-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    audio {
+      height: 36px;
+      outline: none;
+    }
+    .file-path {
+      font-family: monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    @media (max-width: 768px) {
+      .cue-card {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .cue-meta {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .cue-actions {
+        width: 100%;
+      }
+      audio {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎭 Alice in Wonderland — Audio Player</h1>
+      <p class="subtitle">Generated with ElevenLabs official SDK using <strong>eleven_v3</strong> model (44.1kHz 128kbps MP3)</p>
+      <div class="stats-bar">
+        <div class="stat-badge">Total Cues: <strong>28</strong></div>
+        <div class="stat-badge">Scenes: <strong>4</strong></div>
+        <div class="stat-badge">Characters: <strong>8</strong></div>
+        <div class="stat-badge">Audio Location: <code>c:\new projects\output\</code></div>
+      </div>
+    </header>
+
+    <div class="controls-panel">
+      <div class="button-group">
+        <span class="label">Playback:</span>
+        <button class="play-all-btn" id="playAllBtn" onclick="togglePlayAll()">▶ Play All in Sequence</button>
+        <button class="stop-btn" onclick="stopAll()">■ Stop</button>
+      </div>
+      <div class="button-group">
+        <span class="label">Scene:</span>
+        <button class="filter-btn active" onclick="filterScene('all', this)">All Scenes</button>
+        <button class="filter-btn" onclick="filterScene('S1', this)">Scene 1</button>
+        <button class="filter-btn" onclick="filterScene('S2', this)">Scene 2</button>
+        <button class="filter-btn" onclick="filterScene('S3', this)">Scene 3</button>
+        <button class="filter-btn" onclick="filterScene('S4', this)">Scene 4</button>
+      </div>
+      <div class="button-group">
+        <span class="label">Character:</span>
+        <button class="filter-btn active" onclick="filterChar('all', this)">All Characters</button>
+        <button class="filter-btn" onclick="filterChar('alice', this)">Alice</button>
+        <button class="filter-btn" onclick="filterChar('white_rabbit', this)">White Rabbit</button>
+        <button class="filter-btn" onclick="filterChar('cheshire_cat', this)">Cheshire Cat</button>
+        <button class="filter-btn" onclick="filterChar('mad_hatter', this)">Mad Hatter</button>
+        <button class="filter-btn" onclick="filterChar('march_hare', this)">March Hare</button>
+        <button class="filter-btn" onclick="filterChar('dormouse', this)">Dormouse</button>
+        <button class="filter-btn" onclick="filterChar('red_queen', this)">Red Queen</button>
+        <button class="filter-btn" onclick="filterChar('card_soldier', this)">Card Soldier</button>
+      </div>
+    </div>
+
+    <div class="cues-list" id="cuesList">
+      <!-- Cues will be rendered here -->
+    </div>
+  </div>
+
+  <script>
+    const CUES = [
+      { cue: 1, scene: "S1", char: "white_rabbit", voice: "Charlie", file: "output/white_rabbit/01_S1_white_rabbit.mp3", text: "[panicked] Oh, dear! Oh, dear! I shall be too late!" },
+      { cue: 2, scene: "S1", char: "alice", voice: "Alice", file: "output/alice/02_S1_alice.mp3", text: "[amazed] A rabbit wearing a waistcoat and carrying a watch? How curious! [excitedly] Oh wait! Mr Rabbit! Where are you going! What's the hurry?" },
+      { cue: 3, scene: "S1", char: "white_rabbit", voice: "Charlie", file: "output/white_rabbit/03_S1_white_rabbit.mp3", text: "[rushed] The Queen will be furious if I don't reach the palace!" },
+      { cue: 4, scene: "S2", char: "cheshire_cat", voice: "Callum", file: "output/cheshire_cat/04_S2_cheshire_cat.mp3", text: "[mischievously] Welcome to Wonderland, little girl! Looking for someone?" },
+      { cue: 5, scene: "S2", char: "alice", voice: "Alice", file: "output/alice/05_S2_alice.mp3", text: "I'm looking for my way home." },
+      { cue: 6, scene: "S2", char: "cheshire_cat", voice: "Callum", file: "output/cheshire_cat/06_S2_cheshire_cat.mp3", text: "[chuckles] That depends on where you want to go! [mischievously] We're all mad here!" },
+      { cue: 7, scene: "S2", char: "alice", voice: "Alice", file: "output/alice/07_S2_alice.mp3", text: "Everybody seems so strange here!" },
+      { cue: 8, scene: "S2", char: "cheshire_cat", voice: "Callum", file: "output/cheshire_cat/08_S2_cheshire_cat.mp3", text: "[playfully] Follow the music to the tea party!" },
+      { cue: 9, scene: "S3", char: "dormouse", voice: "Lily", file: "output/dormouse/09_S3_dormouse.mp3", text: "[sings] Twinkle twinkle little bat..." },
+      { cue: 10, scene: "S3", char: "mad_hatter", voice: "George", file: "output/mad_hatter/10_S3_mad_hatter.mp3", text: "[excitedly] No room! No room! [playfully] Welcome to our tea party!" },
+      { cue: 11, scene: "S3", char: "alice", voice: "Alice", file: "output/alice/11_S3_alice.mp3", text: "But there's plenty of room!" },
+      { cue: 12, scene: "S3", char: "march_hare", voice: "Will", file: "output/march_hare/12_S3_march_hare.mp3", text: "[playfully] Have some tea! Or perhaps some imaginary wine!" },
+      { cue: 13, scene: "S3", char: "alice", voice: "Alice", file: "output/alice/13_S3_alice.mp3", text: "Why is this tea party so strange?" },
+      { cue: 14, scene: "S3", char: "mad_hatter", voice: "George", file: "output/mad_hatter/14_S3_mad_hatter.mp3", text: "[laughs] Because in Wonderland, nothing makes sense!" },
+      { cue: 15, scene: "S3", char: "dormouse", voice: "Lily", file: "output/dormouse/15_S3_dormouse.mp3", text: "[yawning] Please stop! [whispers] I'm trying to sleep!" },
+      { cue: 16, scene: "S3", char: "alice", voice: "Alice", file: "output/alice/16_S3_alice.mp3", text: "Don't you ever wake up?" },
+      { cue: 17, scene: "S3", char: "dormouse", voice: "Lily", file: "output/dormouse/17_S3_dormouse.mp3", text: "[sleepily] Only when someone mentions cake!" },
+      { cue: 18, scene: "S3", char: "march_hare", voice: "Will", file: "output/march_hare/18_S3_march_hare.mp3", text: "[excitedly] Wake up, Dormouse! It's tea time!" },
+      { cue: 19, scene: "S3", char: "dormouse", voice: "Lily", file: "output/dormouse/19_S3_dormouse.mp3", text: "[excitedly] Oh! Then I'm wide awake!" },
+      { cue: 20, scene: "S4", char: "red_queen", voice: "Sarah", file: "output/red_queen/20_S4_red_queen.mp3", text: "[furiously] Who dares enter my garden? [shouting] Off with their heads!" },
+      { cue: 21, scene: "S4", char: "alice", voice: "Alice", file: "output/alice/21_S4_alice.mp3", text: "Why are you so angry?" },
+      { cue: 22, scene: "S4", char: "red_queen", voice: "Sarah", file: "output/red_queen/22_S4_red_queen.mp3", text: "[furiously] How dare you question the Queen of Hearts!" },
+      { cue: 23, scene: "S4", char: "card_soldier", voice: "Adam", file: "output/card_soldier/23_S4_card_soldier.mp3", text: "[stiffly] Yes, Your Majesty! Nobody questions the Queen of Hearts!" },
+      { cue: 24, scene: "S4", char: "alice", voice: "Alice", file: "output/alice/24_S4_alice.mp3", text: "Do you always follow orders without thinking?" },
+      { cue: 25, scene: "S4", char: "card_soldier", voice: "Adam", file: "output/card_soldier/25_S4_card_soldier.mp3", text: "[matter-of-factly] Well, I'm a soldier, not a thinker!" },
+      { cue: 26, scene: "S4", char: "red_queen", voice: "Sarah", file: "output/red_queen/26_S4_red_queen.mp3", text: "[shouting] Enough talking! Seize her immediately!" },
+      { cue: 27, scene: "S4", char: "card_soldier", voice: "Adam", file: "output/card_soldier/27_S4_card_soldier.mp3", text: "[stiffly] Yes, Your Majesty!" },
+      { cue: 28, scene: "S4", char: "alice", voice: "Alice", file: "output/alice/28_S4_alice.mp3", text: "[firmly] I'm not afraid of you! You're nothing but a pack of cards!" }
+    ];
+
+    let currentSceneFilter = 'all';
+    let currentCharFilter = 'all';
+    let isPlayingAll = false;
+    let currentPlayIndex = -1;
+
+    function formatText(text) {
+      return text.replace(/(\[[a-zA-Z\s]+\])/g, '<span class="emotion-tag">$1</span>');
+    }
+
+    function renderCues() {
+      const container = document.getElementById('cuesList');
+      container.innerHTML = '';
+
+      const filtered = CUES.filter(item => {
+        const sceneMatch = currentSceneFilter === 'all' || item.scene === currentSceneFilter;
+        const charMatch = currentCharFilter === 'all' || item.char === currentCharFilter;
+        return sceneMatch && charMatch;
+      });
+
+      filtered.forEach((item, index) => {
+        const card = document.createElement('div');
+        card.className = 'cue-card';
+        card.id = `cue-card-${item.cue}`;
+
+        const charLabel = item.char.replace('_', ' ');
+
+        card.innerHTML = `
+          <div class="cue-meta">
+            <span class="cue-number">#${String(item.cue).padStart(2, '0')}</span>
+            <span class="scene-pill">${item.scene}</span>
+          </div>
+          <div class="cue-content">
+            <div class="character-row">
+              <span class="character-badge char-${item.char}">${charLabel}</span>
+              <span class="voice-tag">Voice: <strong>${item.voice}</strong></span>
+            </div>
+            <div class="cue-text">${formatText(item.text)}</div>
+            <div class="file-path">${item.file}</div>
+          </div>
+          <div class="cue-actions">
+            <audio id="audio-${item.cue}" controls preload="none">
+              <source src="${item.file}" type="audio/mpeg">
+              Your browser does not support audio.
+            </audio>
+          </div>
+        `;
+
+        const audio = card.querySelector('audio');
+        audio.addEventListener('play', () => {
+          document.querySelectorAll('.cue-card').forEach(c => c.classList.remove('playing'));
+          card.classList.add('playing');
+        });
+        audio.addEventListener('pause', () => {
+          card.classList.remove('playing');
+        });
+        audio.addEventListener('ended', () => {
+          card.classList.remove('playing');
+          if (isPlayingAll) {
+            playNextCue(item.cue);
+          }
+        });
+
+        container.appendChild(card);
+      });
+    }
+
+    function filterScene(scene, btn) {
+      currentSceneFilter = scene;
+      btn.parentElement.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderCues();
+    }
+
+    function filterChar(char, btn) {
+      currentCharFilter = char;
+      btn.parentElement.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderCues();
+    }
+
+    function togglePlayAll() {
+      const btn = document.getElementById('playAllBtn');
+      if (isPlayingAll) {
+        stopAll();
+      } else {
+        isPlayingAll = true;
+        btn.textContent = '⏸ Pause Sequence';
+        btn.style.background = '#d29922';
+        playCueByNumber(1);
+      }
+    }
+
+    function stopAll() {
+      isPlayingAll = false;
+      const btn = document.getElementById('playAllBtn');
+      btn.textContent = '▶ Play All in Sequence';
+      btn.style.background = '#238636';
+      document.querySelectorAll('audio').forEach(a => {
+        a.pause();
+        a.currentTime = 0;
+      });
+      document.querySelectorAll('.cue-card').forEach(c => c.classList.remove('playing'));
+    }
+
+    function playCueByNumber(cueNum) {
+      const audio = document.getElementById(`audio-${cueNum}`);
+      if (audio) {
+        const card = document.getElementById(`cue-card-${cueNum}`);
+        if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        audio.play().catch(e => console.log('Autoplay prevented:', e));
+      } else if (cueNum <= CUES.length) {
+        playNextCue(cueNum);
+      } else {
+        stopAll();
+      }
+    }
+
+    function playNextCue(currentCueNum) {
+      const nextCueNum = currentCueNum + 1;
+      if (nextCueNum <= CUES.length) {
+        playCueByNumber(nextCueNum);
+      } else {
+        stopAll();
+      }
+    }
+
+    renderCues();
+  </script>
+</body>
+</html>

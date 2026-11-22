@@ -1,0 +1,5 @@
+# Script lines for character: MARCH_HARE
+# Total lines: 2
+
+Cue 12 | S3 | [playfully] Have some tea! Or perhaps some imaginary wine!
+Cue 18 | S3 | [excitedly] Wake up, Dormouse! It's tea time!
