@@ -189,7 +189,7 @@ def build_timeline():
         start_str = format_timestamp_ass(item["start_time"])
         end_str = format_timestamp_ass(item["end_time"])
         # Format: CHARACTER NAME: Dialogue
-        text_ass = item["subtitle_text"].replace(",", "\\,")
+        text_ass = item["subtitle_text"]
         ass_lines.append(f"Dialogue: 0,{start_str},{end_str},StageSafeTop,,0,0,0,,{text_ass}")
 
     with open("subtitles/stage_subtitles.ass", "w", encoding="utf-8") as f:

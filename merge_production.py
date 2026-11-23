@@ -11,6 +11,7 @@ import subprocess
 from pathlib import Path
 import numpy as np
 import scipy.io.wavfile as wavfile
+from scipy.signal import fftconvolve
 
 # Configuration & Constants
 WORKSPACE_DIR = Path(r"C:\new projects")
@@ -190,10 +191,10 @@ def step3_mix_audio(config, cue_map):
 
     # 3. Dynamic Sidechain Ducking (-6 dB duck under dialogue)
     print("Applying dynamic sidechain ducking (-6 dB duck under dialogue lines)...")
-    # Smooth dialogue mask using moving average filter (~0.25s window)
+    # Smooth dialogue mask using moving average filter (~0.25s window via fast FFT)
     filter_window = int(0.25 * SAMPLE_RATE)
-    kernel = np.ones(filter_window) / filter_window
-    smooth_mask = np.convolve(dialogue_mask, kernel, mode="same")
+    kernel = np.ones(filter_window, dtype=np.float32) / filter_window
+    smooth_mask = fftconvolve(dialogue_mask, kernel, mode="same")
     smooth_mask = np.clip(smooth_mask, 0.0, 1.0)[:, None]
 
     # Ducking curve: 1.0 (0 dB) when no speech -> 0.50 (-6 dB) when speech
