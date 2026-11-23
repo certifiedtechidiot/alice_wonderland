@@ -40,7 +40,7 @@ All voiceovers are generated via ElevenLabs targeting the high-expressivity `ele
 | :--- | :--- | :--- | :--- |
 | **Alice** | `cgSgspJ2msm6clMCkdW9` | **Jessica** - Playful, Bright, Warm | Switched to young, natural, conversational voice (non-robotic). |
 | **White Rabbit** | `IKne3meq5aSn9XLyUdCD` | **Charlie** - Deep, Confident, Energetic | Panicked, rushed delivery. |
-| **Cheshire Cat** | `N2lVS1w4EtoT3dr4eOWO` | **Callum** - Husky Trickster | Mischievous, chuckling delivery. |
+| **Cheshire Cat** | `FGY2WhTYpPnrIDTdsKH5` | **Laura** - Enthusiast, Quirky Attitude | Female, sassy, mischievous, chuckling delivery. |
 | **Mad Hatter** | `JBFqnCBsd6RMkjVDRZzb` | **George** - Warm Storyteller | Playful, eccentric theatrical cadence. |
 | **March Hare** | `bIHbv24MWmeRgasZH58o` | **Will** - Relaxed Optimist | Bouncy, offbeat party host. |
 | **Dormouse** | `pFZP5JQG7iQjIQuC4Bku` | **Lily** - Velvety Actress | Soft, sleepy, singing cadence. |

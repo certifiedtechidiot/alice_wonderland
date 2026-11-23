@@ -203,10 +203,10 @@ TARGET_VOICES = {
         "role": "Anxious, hurried, fast-talking rabbit",
     },
     "cheshire_cat": {
-        "target": "Callum",
-        "fallback": "Edward",
-        "closest_default": "Callum",
-        "role": "Mischievous, husky grinning trickster",
+        "target": "Laura",
+        "fallback": "Jessica",
+        "closest_default": "Laura",
+        "role": "Mischievous, sassy grinning female trickster",
     },
     "mad_hatter": {
         "target": "Eldrin",
