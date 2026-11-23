@@ -17,18 +17,18 @@ Built for live theater projection with student actors performing in front of a 1
 
 ## 🎬 Scene Breakdown & Timings
 
-Total Show Runtime: **01:45.80** (105.80 seconds)
+Total Show Runtime: **01:42.90** (102.90 seconds)
 
 | Scene | Name & Visual Setting | Ambient Audio / SFX | Timeline Range |
 | :--- | :--- | :--- | :--- |
 | **Scene 1** | **Enchanted Garden & Rabbit Hole**<br>Sunlit English meadow with oversized flowers, stone path, and dark rabbit hole burrow under an ancient hollow oak. | Curious pastoral woodwinds + ticking pocket watch SFX (`120 BPM`). | `00:00.00` – `00:17.26` |
 | **Transition 1** | *Stage clearance & entrance transition* | Smooth audio & video crossfade. | `00:17.26` – `00:18.76` (1.5s) |
-| **Scene 2** | **Twilight Wonderland Forest**<br>Deep mystical woods at dusk with bioluminescent teal/purple mushrooms and wooden directional signposts. | Ethereal glassy pads, playful chimes & pizzicato strings. | `00:18.76` – `00:38.00` |
-| **Transition 2** | *Stage clearance & entrance transition* | Smooth audio & video crossfade. | `00:38.00` – `00:39.50` (1.5s) |
-| **Scene 3** | **The Mad Tea Party**<br>Woodland glade under hanging fairy lanterns. Long banquet table stacked with teacups, teapots, top hats, and cakes—all chairs completely empty. | Quirky, upbeat offbeat tea party waltz (3/4 time) + porcelain clink SFX. | `00:39.50` – `01:14.34` |
-| **Transition 3** | *Stage clearance & entrance transition* | Smooth audio & video crossfade. | `01:14.34` – `01:15.84` (1.5s) |
-| **Scene 4** | **The Queen of Hearts' Rose Garden**<br>Checkered crimson-and-white marble courtyard, towering hedge maze, half-painted dripping white roses, and crimson palace gates. | Royal trumpet fanfare (first 1.2s), followed by tense military strings & timpani. | `01:15.84` – `01:45.74` |
-| **Dramatic Freeze** | *Queen stamps feet / Soldier steps forward / Alice freeze* | Complete dead silence cutoff after Cue 28 for the freeze hold, then gentle fade out. | `01:44.24` – `01:45.74` (1.5s) |
+| **Scene 2** | **Twilight Wonderland Forest**<br>Deep mystical woods at dusk with bioluminescent teal/purple mushrooms and wooden directional signposts. | Ethereal glassy pads, playful chimes & pizzicato strings. | `00:18.76` – `00:35.12` |
+| **Transition 2** | *Stage clearance & entrance transition* | Smooth audio & video crossfade. | `00:35.12` – `00:36.62` (1.5s) |
+| **Scene 3** | **The Mad Tea Party**<br>Woodland glade under hanging fairy lanterns. Long banquet table stacked with teacups, teapots, top hats, and cakes—all chairs completely empty. | Quirky, upbeat offbeat tea party waltz (3/4 time) + porcelain clink SFX. | `00:36.62` – `01:11.46` |
+| **Transition 3** | *Stage clearance & entrance transition* | Smooth audio & video crossfade. | `01:11.46` – `01:12.96` (1.5s) |
+| **Scene 4** | **The Queen of Hearts' Rose Garden**<br>Checkered crimson-and-white marble courtyard, towering hedge maze, half-painted dripping white roses, and crimson palace gates. | Royal trumpet fanfare (first 1.2s), followed by tense military strings & timpani. | `01:12.96` – `01:42.86` |
+| **Dramatic Freeze** | *Queen stamps feet / Soldier steps forward / Alice freeze* | Complete dead silence cutoff after Cue 28 for the freeze hold, then gentle fade out. | `01:41.36` – `01:42.86` (1.5s) |
 
 ---
 
