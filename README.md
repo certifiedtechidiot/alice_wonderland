@@ -17,7 +17,7 @@ Built for live theater projection with student actors performing in front of a 1
 
 ## 🎬 Scene Breakdown & Timings
 
-Total Show Runtime: **01:42.90** (102.90 seconds)
+Total Show Runtime: **01:43.90** (103.90 seconds)
 
 | Scene | Name & Visual Setting | Ambient Audio / SFX | Timeline Range |
 | :--- | :--- | :--- | :--- |
@@ -25,10 +25,10 @@ Total Show Runtime: **01:42.90** (102.90 seconds)
 | **Transition 1** | *Stage clearance & entrance transition* | Smooth audio & video crossfade. | `00:17.26` – `00:18.76` (1.5s) |
 | **Scene 2** | **Twilight Wonderland Forest**<br>Deep mystical woods at dusk with bioluminescent teal/purple mushrooms and wooden directional signposts. | Ethereal glassy pads, playful chimes & pizzicato strings. | `00:18.76` – `00:35.12` |
 | **Transition 2** | *Stage clearance & entrance transition* | Smooth audio & video crossfade. | `00:35.12` – `00:36.62` (1.5s) |
-| **Scene 3** | **The Mad Tea Party**<br>Woodland glade under hanging fairy lanterns. Long banquet table stacked with teacups, teapots, top hats, and cakes—all chairs completely empty. | Quirky, upbeat offbeat tea party waltz (3/4 time) + porcelain clink SFX. | `00:36.62` – `01:11.46` |
-| **Transition 3** | *Stage clearance & entrance transition* | Smooth audio & video crossfade. | `01:11.46` – `01:12.96` (1.5s) |
-| **Scene 4** | **The Queen of Hearts' Rose Garden**<br>Checkered crimson-and-white marble courtyard, towering hedge maze, half-painted dripping white roses, and crimson palace gates. | Royal trumpet fanfare (first 1.2s), followed by tense military strings & timpani. | `01:12.96` – `01:42.86` |
-| **Dramatic Freeze** | *Queen stamps feet / Soldier steps forward / Alice freeze* | Complete dead silence cutoff after Cue 28 for the freeze hold, then gentle fade out. | `01:41.36` – `01:42.86` (1.5s) |
+| **Scene 3** | **The Mad Tea Party**<br>Woodland glade under hanging fairy lanterns. Long banquet table stacked with teacups, teapots, top hats, and cakes—all chairs completely empty. | Quirky, upbeat offbeat tea party waltz (3/4 time) + porcelain clink SFX. | `00:36.62` – `01:12.50` |
+| **Transition 3** | *Stage clearance & entrance transition* | Smooth audio & video crossfade. | `01:12.50` – `01:14.00` (1.5s) |
+| **Scene 4** | **The Queen of Hearts' Rose Garden**<br>Checkered crimson-and-white marble courtyard, towering hedge maze, half-painted dripping white roses, and crimson palace gates. | Royal trumpet fanfare (first 1.2s), followed by tense military strings & timpani. | `01:14.00` – `01:43.90` |
+| **Dramatic Freeze** | *Queen stamps feet / Soldier steps forward / Alice freeze* | Complete dead silence cutoff after Cue 28 for the freeze hold, then gentle fade out. | `01:42.40` – `01:43.90` (1.5s) |
 
 ---
 
@@ -55,31 +55,31 @@ All voiceovers are generated via ElevenLabs targeting the high-expressivity `ele
 Cue 01 | S1 | 00:01.20 -> 00:03.68 (2.48s) | WHITE RABBIT : Oh, dear! Oh, dear! I shall be too late!
 Cue 02 | S1 | 00:04.03 -> 00:14.19 (10.16s)| ALICE        : A rabbit wearing a waistcoat and carrying a watch? How curious! Oh wait! Mr. Rabbit! Where are you going? What's the hurry?
 Cue 03 | S1 | 00:14.54 -> 00:17.26 (2.72s) | WHITE RABBIT : The Queen will be furious if I don't reach the palace!
-Cue 04 | S2 | 00:19.96 -> 00:24.20 (4.24s) | CHESHIRE CAT : Welcome to Wonderland, little girl! Looking for someone?
-Cue 05 | S2 | 00:24.55 -> 00:26.15 (1.60s) | ALICE        : I'm looking for my way home.
-Cue 06 | S2 | 00:26.50 -> 00:32.58 (6.08s) | CHESHIRE CAT : That depends on where you want to go! We're all mad here!
-Cue 07 | S2 | 00:32.93 -> 00:35.33 (2.40s) | ALICE        : Everybody seems so strange here!
-Cue 08 | S2 | 00:35.68 -> 00:38.00 (2.32s) | CHESHIRE CAT : Follow the music to the tea party!
-Cue 09 | S3 | 00:40.70 -> 00:43.50 (2.80s) | DORMOUSE     : Twinkle, twinkle, little bat...
-Cue 10 | S3 | 00:44.15 -> 00:47.51 (3.36s) | MAD HATTER   : No room! No room! Welcome to our tea party!
-Cue 11 | S3 | 00:47.86 -> 00:49.46 (1.60s) | ALICE        : But there's plenty of room!
-Cue 12 | S3 | 00:49.81 -> 00:53.57 (3.76s) | MARCH HARE   : Have some tea! Or perhaps some imaginary wine!
-Cue 13 | S3 | 00:53.92 -> 00:56.24 (2.32s) | ALICE        : Why is this tea party so strange?
-Cue 14 | S3 | 00:56.59 -> 00:59.79 (3.20s) | MAD HATTER   : Because in Wonderland, nothing makes sense!
-Cue 15 | S3 | 01:00.14 -> 01:04.30 (4.16s) | DORMOUSE     : Please stop! I'm trying to sleep!
-Cue 16 | S3 | 01:04.65 -> 01:06.09 (1.44s) | ALICE        : Don't you ever wake up?
-Cue 17 | S3 | 01:06.44 -> 01:09.32 (2.88s) | DORMOUSE     : Only when someone mentions cake!
-Cue 18 | S3 | 01:09.67 -> 01:11.75 (2.08s) | MARCH HARE   : Wake up, Dormouse! It's tea time!
-Cue 19 | S3 | 01:12.10 -> 01:14.34 (2.24s) | DORMOUSE     : Oh! Then I'm wide awake!
-Cue 20 | S4 | 01:17.04 -> 01:20.88 (3.84s) | RED QUEEN    : Who dares enter my garden? Off with their heads!
-Cue 21 | S4 | 01:21.23 -> 01:22.59 (1.36s) | ALICE        : Why are you so angry?
-Cue 22 | S4 | 01:22.94 -> 01:25.34 (2.40s) | RED QUEEN    : How dare you question the Queen of Hearts!
-Cue 23 | S4 | 01:25.69 -> 01:29.61 (3.92s) | CARD SOLDIER : Yes, Your Majesty! Nobody questions the Queen of Hearts!
-Cue 24 | S4 | 01:29.96 -> 01:32.52 (2.56s) | ALICE        : Do you always follow orders without thinking?
-Cue 25 | S4 | 01:32.87 -> 01:35.03 (2.16s) | CARD SOLDIER : Well, I'm a soldier, not a thinker!
-Cue 26 | S4 | 01:35.38 -> 01:38.02 (2.64s) | RED QUEEN    : Enough talking! Seize her immediately!
-Cue 27 | S4 | 01:38.37 -> 01:39.89 (1.52s) | CARD SOLDIER : Yes, Your Majesty!
-Cue 28 | S4 | 01:40.24 -> 01:44.24 (4.00s) | ALICE        : I'm not afraid of you! You're nothing but a pack of cards!
+Cue 04 | S2 | 00:19.96 -> 00:23.48 (3.52s) | CHESHIRE CAT : Welcome to Wonderland, little girl! Looking for someone?
+Cue 05 | S2 | 00:23.83 -> 00:25.43 (1.60s) | ALICE        : I'm looking for my way home.
+Cue 06 | S2 | 00:25.78 -> 00:29.94 (4.16s) | CHESHIRE CAT : That depends on where you want to go! We're all mad here!
+Cue 07 | S2 | 00:30.29 -> 00:32.69 (2.40s) | ALICE        : Everybody seems so strange here!
+Cue 08 | S2 | 00:33.04 -> 00:35.12 (2.08s) | CHESHIRE CAT : Follow the music to the tea party!
+Cue 09 | S3 | 00:37.82 -> 00:41.66 (3.84s) | DORMOUSE     : Twinkle, twinkle, little bat...
+Cue 10 | S3 | 00:42.31 -> 00:45.67 (3.36s) | MAD HATTER   : No room! No room! Welcome to our tea party!
+Cue 11 | S3 | 00:46.02 -> 00:47.62 (1.60s) | ALICE        : But there's plenty of room!
+Cue 12 | S3 | 00:47.97 -> 00:51.73 (3.76s) | MARCH HARE   : Have some tea! Or perhaps some imaginary wine!
+Cue 13 | S3 | 00:52.08 -> 00:54.40 (2.32s) | ALICE        : Why is this tea party so strange?
+Cue 14 | S3 | 00:54.75 -> 00:57.95 (3.20s) | MAD HATTER   : Because in Wonderland, nothing makes sense!
+Cue 15 | S3 | 00:58.30 -> 01:02.46 (4.16s) | DORMOUSE     : Please stop! I'm trying to sleep!
+Cue 16 | S3 | 01:02.81 -> 01:04.25 (1.44s) | ALICE        : Don't you ever wake up?
+Cue 17 | S3 | 01:04.60 -> 01:07.48 (2.88s) | DORMOUSE     : Only when someone mentions cake!
+Cue 18 | S3 | 01:07.83 -> 01:09.91 (2.08s) | MARCH HARE   : Wake up, Dormouse! It's tea time!
+Cue 19 | S3 | 01:10.26 -> 01:12.50 (2.24s) | DORMOUSE     : Oh! Then I'm wide awake!
+Cue 20 | S4 | 01:15.20 -> 01:19.04 (3.84s) | RED QUEEN    : Who dares enter my garden? Off with their heads!
+Cue 21 | S4 | 01:19.39 -> 01:20.75 (1.36s) | ALICE        : Why are you so angry?
+Cue 22 | S4 | 01:21.10 -> 01:23.50 (2.40s) | RED QUEEN    : How dare you question the Queen of Hearts!
+Cue 23 | S4 | 01:23.85 -> 01:27.77 (3.92s) | CARD SOLDIER : Yes, Your Majesty! Nobody questions the Queen of Hearts!
+Cue 24 | S4 | 01:28.12 -> 01:30.68 (2.56s) | ALICE        : Do you always follow orders without thinking?
+Cue 25 | S4 | 01:31.03 -> 01:33.19 (2.16s) | CARD SOLDIER : Well, I'm a soldier, not a thinker!
+Cue 26 | S4 | 01:33.54 -> 01:36.18 (2.64s) | RED QUEEN    : Enough talking! Seize her immediately!
+Cue 27 | S4 | 01:36.53 -> 01:38.05 (1.52s) | CARD SOLDIER : Yes, Your Majesty!
+Cue 28 | S4 | 01:38.40 -> 01:42.40 (4.00s) | ALICE        : I'm not afraid of you! You're nothing but a pack of cards!
 ```
 
 ---
@@ -124,7 +124,7 @@ Cue 28 | S4 | 01:40.24 -> 01:44.24 (4.00s) | ALICE        : I'm not afraid of yo
 ├── timeline_config.json            # Master timeline JSON
 ├── generate_audio.py               # ElevenLabs voice generation script
 ├── merge_production.py             # Single-command production compiler
-├── final_alice_in_wonderland_stage.mp4 # Full rendered 1080p show video (01:45.80)
+├── final_alice_in_wonderland_stage.mp4 # Full rendered 1080p show video (01:43.90)
 ├── requirements.txt                # Python dependencies
 └── README.md                       # Documentation & instructions
 ```

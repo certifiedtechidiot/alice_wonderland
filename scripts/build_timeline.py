@@ -14,7 +14,7 @@ SCRIPT_DATA = [
     {"cue": 6, "scene": "S2", "character": "CHESHIRE CAT", "text": "[chuckles] That depends on where you want to go! [mischievously] We're all mad here!"},
     {"cue": 7, "scene": "S2", "character": "ALICE", "text": "Everybody seems so strange here!"},
     {"cue": 8, "scene": "S2", "character": "CHESHIRE CAT", "text": "[playfully] Follow the music to the tea party!"},
-    {"cue": 9, "scene": "S3", "character": "DORMOUSE", "text": "[sings] Twinkle, twinkle, little bat..."},
+    {"cue": 9, "scene": "S3", "character": "DORMOUSE", "text": "[sleepily][yawning][sings softly] Twinkle, twinkle, little bat..."},
     {"cue": 10, "scene": "S3", "character": "MAD HATTER", "text": "[excitedly] No room! No room! [playfully] Welcome to our tea party!"},
     {"cue": 11, "scene": "S3", "character": "ALICE", "text": "But there's plenty of room!"},
     {"cue": 12, "scene": "S3", "character": "MARCH HARE", "text": "[playfully] Have some tea! Or perhaps some imaginary wine!"},

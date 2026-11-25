@@ -12,6 +12,7 @@ from typing import Dict, List, Optional, Tuple, Any
 
 import dotenv
 from elevenlabs.client import ElevenLabs
+from elevenlabs.types import VoiceSettings
 
 # Load environment variables from .env
 dotenv.load_dotenv()
@@ -70,7 +71,8 @@ SCRIPT_DATA: List[Dict[str, Any]] = [
         "cue": 9,
         "scene": "S3",
         "character": "dormouse",
-        "text": "[sings] Twinkle twinkle little bat...",
+        "text": "[sleepily][yawning][sings softly] Twinkle, twinkle, little bat...",
+        "voice_settings": VoiceSettings(stability=0.0),
     },
     {
         "cue": 10,
@@ -560,12 +562,16 @@ def main():
             flush=True,
         )
         try:
-            audio_stream = client.text_to_speech.convert(
-                voice_id=voice_id,
-                text=text,
-                model_id="eleven_v3",
-                output_format="mp3_44100_128",
-            )
+            convert_kwargs = {
+                "voice_id": voice_id,
+                "text": text,
+                "model_id": "eleven_v3",
+                "output_format": "mp3_44100_128",
+            }
+            if item.get("voice_settings") is not None:
+                convert_kwargs["voice_settings"] = item["voice_settings"]
+
+            audio_stream = client.text_to_speech.convert(**convert_kwargs)
             with open(dest_file, "wb") as f:
                 for chunk in audio_stream:
                     if chunk:
